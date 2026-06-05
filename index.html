@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart AI Chatbot</title>
+    <!-- Direct link to CSS in the same folder -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="header">
+        <div class="header-left">
+          <div class="bot-avatar-small"><i class="fas fa-robot"></i></div>
+          <div class="header-info">
+            <h2>AI Assistant</h2>
+            <span class="status"><span class="status-dot"></span> Online</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="clearBtn" title="Clear chat">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="message bot">
+          <div class="avatar bot-avatar"><i class="fas fa-robot"></i></div>
+          <div class="bubble-wrapper">
+            <div class="bubble">
+              Hello! I'm your AI assistant. Type <b>help</b> to see what I can
+              do!
+            </div>
+            <span class="timestamp"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="typing" id="typing">
+        <div class="typing-dots"><span></span><span></span><span></span></div>
+        <span class="typing-text">Bot is thinking</span>
+      </div>
+
+      <div class="input-area">
+        <textarea
+          id="userInput"
+          placeholder="Type a message..."
+          autocomplete="off"
+          rows="1"
+          aria-label="Message input"
+        ></textarea>
+        <button type="button" id="sendBtn" title="Send message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Direct link to JS in the same folder -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
