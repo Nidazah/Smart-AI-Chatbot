@@ -1,99 +1,82 @@
-# Smart AI Chatbot
+#  Smart AI Chatbot
 
-A lightweight, rule-based AI chatbot built with **Python Flask** and a clean web frontend. It understands natural language intents, holds session-based context, and responds intelligently — no external AI API required.
-
----
-
-## Project Overview
-
-Smart AI Chatbot is a conversational web application that processes user messages through a structured intent-matching engine. It runs entirely on a local Flask server and serves a dynamic HTML/CSS/JS chat interface. The bot maintains session state across a conversation, allowing it to remember user information (like names) and reset context on goodbye.
+A rule-based conversational chatbot with a Flask backend, session-aware context, and a polished dark-mode UI — no external AI API required.
 
 ---
 
-## Problem It Solves
+##  Project Overview
 
-Most chatbot demos are either too complex (requiring paid APIs and cloud setup) or too trivial (hardcoded if/else with no structure). This project hits the sweet spot:
-
-- **No external API costs** — fully self-contained, runs offline
-- **Structured intent system** — organized, maintainable, and easily extendable
-- **Session memory** — the bot actually remembers what you told it within a conversation
-- **Beginner-friendly architecture** — clean separation of routing, intent matching, and response generation, ideal for learning how chatbot backends work
+Smart AI Chatbot is a lightweight, self-contained chat application built with Flask and Vanilla JS. It uses structured intent matching with wildcard pattern support to handle greetings, jokes, time queries, name recognition, and session resets — all served through a clean, animated chat interface.
 
 ---
 
-## Problem It Solves
+##  Problem It Solves
 
-Most chatbot demos are either too complex (requiring paid APIs and cloud setup) or too trivial (hardcoded if/else with no structure). This project hits the sweet spot:
-
-- **No external API costs** — fully self-contained, runs offline
-- **Structured intent system** — organized, maintainable, and easily extendable
-- **Session memory** — the bot actually remembers what you told it within a conversation
-- **Beginner-friendly architecture** — clean separation of routing, intent matching, and response generation, ideal for learning how chatbot backends work
+Most chatbot tutorials either rely on bloated NLP libraries or external APIs that require paid keys. This project demonstrates how to build a functional, session-aware chatbot from scratch using only Python's standard library and Flask — making it easy to understand, extend, and deploy without dependencies or API costs.
 
 ---
 
-## Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
 | Backend | Python 3, Flask |
-| Frontend | HTML, CSS, JavaScript |
-| Session Handling | Flask `session` (server-side) |
-| Pattern Matching | Custom rule-based engine (no ML) |
-| Template Engine | Jinja2 (Flask built-in) |
+| Session Management | Flask server-side sessions |
+| Intent Engine | Custom rule-based regex pattern matcher |
+| Frontend | HTML5, CSS3 (CSS Variables), Vanilla JS (ES6+) |
+| Icons | Font Awesome 6 |
+| Communication | Fetch API (async POST to `/chat`) |
 
 ---
 
-## How to Run
+##  How to Run
 
-### Prerequisites
-- Python 3.8+
-- pip
+### 1. Clone the repo
+```bash
+git clone https://github.com/Nidazah/smart-ai-chatbot.git
+cd smart-ai-chatbot
+```
 
-### Steps
-
-\`\`\`bash
-# 1. Clone the repository
-git clone https://github.com/Nidazah/Smart-AI-Chatbot.git
-cd Smart-AI-Chatbot
-
-# 2. Install dependencies
+### 2. Install dependencies
+```bash
 pip install flask
+```
 
-# 3. Run the app
+### 3. Start the server
+```bash
 python app.py
-\`\`\`
+# Runs at http://localhost:5000
+```
 
-Then open your browser and go to: **http://localhost:5000**
+### 4. Open in browser
+Navigate to `http://localhost:5000` — the chat UI loads automatically.
 
-### Supported Commands
-Once the chatbot is running, try typing:
+---
 
-| Input Example | What It Does |
+##  Supported Commands
+
+| Input Example | Intent |
 |---|---|
-| `hello` / `hi` | Greets you |
-| `my name is Nida` | Remembers your name |
-| `what time is it` | Returns current time |
-| `tell me a joke` | Returns a random joke |
-| `help` | Lists available capabilities |
-| `bye` / `goodbye` | Ends session and resets context |
+| `hi`, `hello`, `yo` | Greeting |
+| `my name is Sara` | Name recognition (stored in session) |
+| `what time is it` | Live server time |
+| `tell me a joke` | Random joke from pool |
+| `help` | Lists capabilities |
+| `bye`, `goodbye` | Farewell + session clear |
+| `reset` / `clear` | Wipes conversation context |
 
 ---
 
-## Future Improvements
+##  Future Improvements
 
-- [ ] **NLP Integration** — Replace rule-based matching with spaCy or a lightweight transformer for fuzzy/semantic understanding
-- [ ] **Persistent Memory** — Store conversation history in a database (SQLite/PostgreSQL) so the bot remembers across sessions
-- [ ] **User Authentication** — Add login so each user gets a personalized chat history
-- [ ] **More Intents** — Expand the intent library (weather, calculator, FAQ, small talk)
-- [ ] **Voice Input/Output** — Add speech-to-text and text-to-speech support via Web Speech API
-- [ ] **Admin Dashboard** — A simple panel to add/edit intents without touching the code
-- [ ] **Deployment** — Host on Render or Railway for a live demo link
+- [ ] Integrate a lightweight NLP model (spaCy or NLTK) for fuzzy intent matching
+- [ ] Persist conversation history to a database (SQLite or PostgreSQL)
+- [ ] Add user authentication so each user has their own named session
+- [ ] Expand intent library with weather, calculator, and Wikipedia lookup
+- [ ] Deploy to Render or Railway with a public URL
+- [ ] Add voice input/output via Web Speech API
+- [ ] Stream bot responses token-by-token for a more realistic AI feel
 
 ---
 
-## Author
-
-**Nida** — [@Nidazah](https://github.com/Nidazah)
-
-> Built as part of an AI/automation portfolio. Feedback and contributions welcome!
+*Built by [Nida Zahra](https://linkedin.com/in/nidazahra24) · [GitHub](https://github.com/Nidazah)*
